@@ -21,7 +21,7 @@ func addName(c *gin.Context) {
 	}
 
 	if err := c.BindJSON(&input); err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid input"})
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Entrada invalida"})
 		return
 	}
 
@@ -31,7 +31,7 @@ func addName(c *gin.Context) {
 
 func main() {
 	r := gin.Default()
-
+  
 	r.GET("/getnames", getAllNames)
 	r.POST("/postname", addName)
 
