@@ -32,8 +32,8 @@ func addName(c *gin.Context) {
 func main() {
 	r := gin.Default()
 
-	r.GET("/names", getAllNames)
-	r.POST("/names", addName)
+	r.GET("/listnames", getAllNames)
+	r.POST("/postnames", addName)
 
 	if err := r.Run(":8080"); err != nil {
 		log.Fatal(err)
