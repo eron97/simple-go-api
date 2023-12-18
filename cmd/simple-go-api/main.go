@@ -1,5 +1,3 @@
-// main.go
-
 package main
 
 import (
@@ -21,7 +19,7 @@ func addName(c *gin.Context) {
 	}
 
 	if err := c.BindJSON(&input); err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": "Entrada invalida"})
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid input"})
 		return
 	}
 
@@ -30,10 +28,17 @@ func addName(c *gin.Context) {
 }
 
 func main() {
+	// Inicializando a slice dentro da função main
+	names = []string{
+		"Gabriella Jesus Oliveira",
+		"Juliano Fronteiro De Melo Maranhão",
+		"Caio Brito Mello Ferroz",
+	}
+
 	r := gin.Default()
 
 	r.GET("/getallnames", getAllNames)
-	r.POST("/postonenames", addName)
+	r.POST("/postonename", addName)
 
 	if err := r.Run(":8080"); err != nil {
 		log.Fatal(err)
