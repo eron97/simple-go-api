@@ -37,8 +37,8 @@ func main() {
 
 	r := gin.Default()
 
-	r.GET("/getallnames", getAllNames)
-	r.POST("/postonename", addName)
+	r.GET("/getnames", getAllNames)
+	r.POST("/postname", addName)
 
 	if err := r.Run(":8080"); err != nil {
 		log.Fatal(err)
