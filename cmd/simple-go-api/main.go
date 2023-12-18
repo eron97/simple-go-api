@@ -32,7 +32,7 @@ func addName(c *gin.Context) {
 func main() {
 	r := gin.Default()
 
-	r.GET("/chamanames", getAllNames)
+	r.GET("/getnames", getAllNames)
 	r.POST("/postnames", addName)
 
 	if err := r.Run(":8080"); err != nil {
